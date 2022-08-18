@@ -20,7 +20,7 @@ class Solution {
              }
             res = rev;
         }
-        if(res>Integer.MAX_VALUE || res<Integer.MIN_VALUE)
+        if(res>2147483647 || res<-2147483648)
             return 0;
         return (int)res;
     }
