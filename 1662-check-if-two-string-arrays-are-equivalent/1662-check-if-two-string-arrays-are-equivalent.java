@@ -17,5 +17,12 @@ class Solution {
             return true;
         return false;
         
+        //by using join method 
+        /*String s1 = String.join("", word1);
+          String s2 = String.join("", word2);
+          return s1.equals(s2);*/
+
+
+        
     }
 }
