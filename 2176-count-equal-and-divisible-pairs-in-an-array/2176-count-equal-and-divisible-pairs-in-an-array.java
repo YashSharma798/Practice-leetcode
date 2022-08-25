@@ -10,5 +10,8 @@ class Solution {
             }
         }
         return cnt;
+        
+        // 0/2 = 0(rem)
+        // 2/0 = 2(rem)
     }
 }
