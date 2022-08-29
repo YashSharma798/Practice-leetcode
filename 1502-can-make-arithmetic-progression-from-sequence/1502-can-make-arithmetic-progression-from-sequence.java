@@ -5,11 +5,9 @@ class Solution {
         int cnt=0;
         for(int i=0 ; i<arr.length-1 ; i++)
         {
-            if(arr[i+1]-arr[i] == dif)
-                cnt++;
+            if(arr[i+1]-arr[i] != dif)
+                return false;
         }
-        if(cnt == arr.length-1)
-            return true;
-        return false;
+        return true;
     }
 }
