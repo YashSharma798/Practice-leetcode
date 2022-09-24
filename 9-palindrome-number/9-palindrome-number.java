@@ -6,14 +6,15 @@ class Solution {
             return false;
         if(num%10==0 && num!=0)
             return false;
-        while(x!=0)
+        while(x>rev)
         {
             rev = rev*10 +(x%10);
             x/=10;
         }
-        if(rev==num)
-            return true;
-        else
-            return false;
+        return rev == x || x == rev/10;
+        // if(rev==num)
+        //     return true;
+        // else
+        //     return false;
     }
 }
