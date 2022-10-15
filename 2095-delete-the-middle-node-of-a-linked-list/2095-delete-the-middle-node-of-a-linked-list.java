@@ -14,13 +14,21 @@ class Solution {
         if(head.next==null){
             return null;
         }
+        if(head.next.next==null)
+        {
+            head.next=null;
+            return head;
+        }
         ListNode fast=head,slow=head,prev=null;
         while(fast!=null && fast.next!=null){
-            fast=fast.next.next;
-            prev=slow;
+            
+           // prev=slow;
             slow=slow.next;
+            fast=fast.next.next;
         }
-        prev.next=prev.next.next;
+        slow.val = slow.next.val;
+        slow.next= slow.next.next;
+        //prev.next=prev.next.next;
         return head;
     }
 }
