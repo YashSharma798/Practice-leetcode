@@ -20,14 +20,12 @@ public class Solution {
         HashSet<ListNode> ht = new HashSet<ListNode>();
         while(temp!=null)
         {
-            curr=temp;
-            nextptr=temp.next;
-            ht.add(curr);
-            if(ht.contains(nextptr))
+            
+            if(ht.contains(temp))
             {
                 return true;
-                //break;
             }
+            ht.add(temp);
             temp=temp.next;
         }
         return false;
