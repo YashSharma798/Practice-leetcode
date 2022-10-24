@@ -10,23 +10,38 @@
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if(list1 == null) {
+            return list2;
+        }
+        
+        if(list2 == null) {
+            return list1;
+        }
+                
+        //Create a new list for the result list
         ListNode head = new ListNode(0);
+        //We want to return the head so we should make it stay where it is
+        //So introduce a new variable which will show head
+        ListNode curr = head;
         
-        if(list1 == null && list2 == null) return null;  //null checking
-        if(list1 == null) return list2;
-        if(list2 == null) return list1;
-        
-        if(list1.val > list2.val) { //comparing and merging
-            head = list2;
-            list2 = list2.next;
+        while(list1!= null && list2 != null) {
+            if(list1.val < list2.val) {
+                curr.next = list1;
+                list1 = list1.next;
+            }else {
+                curr.next = list2;
+                list2 = list2.next;
+            }
+            curr = curr.next;
         }
-        else {
-            head = list1;
-            list1 = list1.next;
-        }
         
-        head.next = mergeTwoLists(list1, list2);
-        return head;
+        //Which one is not null add all of its left values.
+        if(list1 != null) {
+            curr.next = list1;
+        } else {
+            curr.next = list2;
+        }
+        return head.next;
         
     }
 }
